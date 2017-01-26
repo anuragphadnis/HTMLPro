@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Feedback</title>
+	<style>
+	body
+	{
+		color:#000044;
+		size:14px;
+	}
+	hr
+	{
+		border-bottom-color:#cc0000;
+		border-top-color:#aa0000;
+		border
+	}
+	div.mid{text-align:center;}
+	div.head
+	{
+		font-size:30px;
+		font-family:arial;
+	}
+	input
+	{
+		width:30%;
+		border-radius: 8px;
+		text-align:center;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+	}
+	input.cb
+	{
+		width:11px;
+		height:11px;
+	}
+	#topbox
+	{
+		border-left:6px solid black;
+		border-right:6px solid black;
+		background-color:#dddddd;
+		color:white;
+		allign:center;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+	}
+	#button
+	{
+		width:70px;
+		text-align:center;
+		color:#555555;
+		background: linear-gradient(#ffffff,#aaaaaa);
+		border-radius:5px;
+		border:1px outset ;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+	}
+	</style>
+	
+	<script type="text/javascript">
+		function check_first_name()
+		{
+			if(document.getElementById("firstname").innerHTML.length>0)
+			{
+				document.getElementById("fncheck").innerHTML.style.color=#00ff00;
+				document.getElementById("fncheck").innerHTML="OK";
+			}
+			else
+			{
+				document.getElementById("fncheck").innerHTML.style.color=#ff0000;
+				document.getElementById("fncheck").innerHTML="Invalid";
+			}
+		return 0;
+		}
+		function call()
+		{
+			check_first_name();
+		//	check_last_name();
+			
+		}
+	</script>
+</head>
+<body>
+<strong>
+<div class="mid head">Feedback</div>
+</strong>
+<div class="mid" id="topbox">Feedback form for event</div>
+<br/>
+<!-- Form starts here-->
+First Name:<input type="text" name="firstname" id="firstname" placeholder=" Enter your first name"/><div id="fncheck"></div>
+Last Name:<input type="text" name="lastname" id="lastname" placeholder=" Enter your last name" required/><div id="lncheck"></div>
+Branch&nbsp &nbsp &nbsp &nbsp :<select name="branch" id="branch";><option value="CS">CS</option><option value="IT">IT</option><option value="CS">EC</option><option value="mech">Mech</option><option value="civil">Civil</option></select><br/>
+Year&nbsp &nbsp &nbsp &nbsp &nbsp :  <select name="year" id="year"><option value="first">First</option><option value="second">Second</option><option value="third">Third</option><option value="fourth">Fourth</option></select></br>
+Rate the Event: <input type="number" name="rating" id="rating" min=1 max=10 placeholder=1-10 required style="width:10%;"/><div id="rating"></div><br/>
+Which things you liked(if any)
+<br/>
+&nbsp
+<input class="cb" type="checkbox" name="liked" id="liked"/>&nbsp Motivational session<br/>
+&nbsp
+<input class="cb" type="checkbox" name="liked" id="liked">&nbsp Introduction to programming languages</input><br/>
+&nbsp
+<input class="cb" type="checkbox" name="liked" id="liked">&nbsp Introduction to python</input><br/>
+&nbsp
+<input class="cb" type="checkbox" name="liked" id="liked">&nbsp Complex codes in python</input><br/>
+&nbsp
+<input class="cb" type="checkbox" name="liked" id="liked">&nbsp More complex codes in python</input><br/>
+&nbsp
+<input class="cb" type="checkbox" name="liked" id="liked">&nbsp Coding contest</input><br/>
+&nbsp
+<input class="cb" type="checkbox" name="liked" id="liked">&nbsp Magic show by Steven Frayne</input><br/>
+&nbsp
+<input class="cb" type="checkbox" name="liked" id="liked">&nbsp Live performance of Arjit Singh</input><br/>
+
+<div id="button" onclick="call()">submit</div>
+</body>
+</html>
